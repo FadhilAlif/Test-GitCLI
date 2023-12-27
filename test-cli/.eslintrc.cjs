@@ -1,20 +1,28 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+  env: {
+    commonjs: true,
+    es2021: true,
+    node: true,
   },
-}
+  extends: [
+    "eslint:recommended",
+    "eslint-config-prettier",
+    "plugin:jsdoc/recommended",
+  ],
+  plugins: ["eslint-plugin-prettier", "jsdoc"],
+  parserOptions: {
+    ecmaVersion: "latest",
+  },
+  rules: {
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",
+    "jsdoc/check-property-names": 0,
+    "jsdoc/check-tag-names": 0,
+    "jsdoc/require-param-description": 0,
+    "jsdoc/require-property-description": 0,
+    "jsdoc/require-returns": 0,
+    "jsdoc/require-returns-description": 0,
+    "jsdoc/tag-lines": 0,
+    "jsdoc/valid-types": 0,
+  },
+};
